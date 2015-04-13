@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="col-md-4 col-md-offset-4">
+        <form>
+            <fieldset>
+                <legend>Login</legend>
+
+                <div class="form-group">
+                    <label for="{{ login_form.username.id }}">Username</label>
+                    <input type="text" class="form-control" id="{{ login_form.username.id }}" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="{{ login_form.password.id }}">Password</label>
+                    <input type="password" class="form-control" id="{{ login_form.password.id }}" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="btn btn-default">Login</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
