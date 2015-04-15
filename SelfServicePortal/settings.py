@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'SelfServicePortal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vloud_db',
+        'NAME': 'vcloud_db',
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST': '192.168.18.7',
