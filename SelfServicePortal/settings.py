@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vcloud_db',
-        'USER': 'root',
-        'PASSWORD': 'admin',
+        'USER': 'vcloud',
+        'PASSWORD': 'qwerty',
         'HOST': '192.168.18.7',
     }
 }
