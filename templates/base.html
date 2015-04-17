@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,65 +16,77 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <style>
-          body {
-              padding-top: 70px;
-          }
-                      /* Sticky footer styles
-            -------------------------------------------------- */
-            html {
-              position: relative;
-              min-height: 100%;
-            }
-            body {
-              /* Margin bottom by footer height */
-              margin-bottom: 60px;
-            }
-            .footer {
-              position: absolute;
-              bottom: 0;
-              width: 100%;
-              /* Set the fixed height of the footer here */
-              height: 60px;
-              background-color: #f5f5f5;
-            }
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        /* Sticky footer styles
+-------------------------------------------------- */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+            background-color: #f5f5f5;
+        }
 
-      </style>
-  </head>
-  <body>
+    </style>
+</head>
+<body>
 
-     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Self Service Portal</a>
+            <a class="navbar-brand" href="/">Self Service Portal</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li><a href="">Hi, {{ user.get_username }}</a></li>
+                    <li><a href="/logout/">Logout</a>
+                {% else %}
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/register/">Register</a></li>
+                {% endif %}
+            </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    </div>
+</nav>
 
-     <div class="container">
-         {% block content %}
+<div class="container">
+     {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% block content %}
 
-         {% endblock %}
-     </div>
+    {% endblock %}
+</div>
 
 
-     <footer class="footer">
-      <div class="container" align="center">
-          <br>
-          <p class="text-muted">Copyrights <a href="www.vnit.ac.in">VNIT@2015</a></p>
-      </div>
-    </footer>
+<footer class="footer">
+    <div class="container" align="center">
+        <br>
+        <p class="text-muted">Copyrights <a href="www.vnit.ac.in">VNIT@2015</a></p>
+    </div>
+</footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/static/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/static/js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/static/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/static/js/bootstrap.min.js"></script>
+</body>
 </html>
