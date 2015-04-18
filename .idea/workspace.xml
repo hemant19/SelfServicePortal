@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6cebee-8752-4170-a298-8a54d303d99a" name="Default" comment="Added database settings">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/create_instance.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/dashboard_base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdash/openstack_controller.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/usage_history.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/userdash/authenticate_openstack.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signups/credentials.py" afterPath="$PROJECT_DIR$/signups/credentials.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signups/models.py" afterPath="$PROJECT_DIR$/signups/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdash/models.py" afterPath="$PROJECT_DIR$/userdash/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfServicePortal/settings.py" afterPath="$PROJECT_DIR$/SelfServicePortal/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/signup.html" afterPath="$PROJECT_DIR$/templates/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfServicePortal/urls.py" afterPath="$PROJECT_DIR$/SelfServicePortal/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/view_instance.html" afterPath="$PROJECT_DIR$/templates/view_instance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signups/views.py" afterPath="$PROJECT_DIR$/signups/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdash/views.py" afterPath="$PROJECT_DIR$/userdash/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdash/openstack_controller.py" afterPath="$PROJECT_DIR$/userdash/openstack_controller.py" />
     </list>
     <ignored path="SelfServicePortal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="openstack_controller.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="openstack_controller.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userdash/openstack_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2410" max-vertical-offset="2820">
-              <caret line="162" column="48" selection-start-line="162" selection-start-column="48" selection-end-line="162" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.6707317" vertical-offset="2560" max-vertical-offset="2970">
+              <caret line="189" column="44" selection-start-line="189" selection-start-column="44" selection-end-line="189" selection-end-column="44" />
               <folding>
                 <element signature="e#23#68#0" expanded="true" />
               </folding>
@@ -89,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_instance.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_instance.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/create_instance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8652849" vertical-offset="720" max-vertical-offset="1560">
-              <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+            <state vertical-scroll-proportion="-6.875" vertical-offset="720" max-vertical-offset="1560">
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -168,6 +151,7 @@
         <option value="$PROJECT_DIR$/signups/credentials.py" />
         <option value="$PROJECT_DIR$/SelfServicePortal/settings.py" />
         <option value="$PROJECT_DIR$/userdash/authenticate_openstack.py" />
+        <option value="$PROJECT_DIR$/userdash/openstack_controller.py" />
       </list>
     </option>
   </component>
@@ -1074,21 +1058,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userdash/openstack_controller.py">
+    <entry file="file://$PROJECT_DIR$/templates/create_instance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2410" max-vertical-offset="2820">
-          <caret line="162" column="48" selection-start-line="162" selection-start-column="48" selection-end-line="162" selection-end-column="48" />
-          <folding>
-            <element signature="e#23#68#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-6.875" vertical-offset="720" max-vertical-offset="1560">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/create_instance.html">
+    <entry file="file://$PROJECT_DIR$/userdash/openstack_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8652849" vertical-offset="720" max-vertical-offset="1560">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
+        <state vertical-scroll-proportion="0.6707317" vertical-offset="2560" max-vertical-offset="2970">
+          <caret line="189" column="44" selection-start-line="189" selection-start-column="44" selection-end-line="189" selection-end-column="44" />
+          <folding>
+            <element signature="e#23#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

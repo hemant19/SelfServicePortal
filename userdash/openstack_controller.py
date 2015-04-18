@@ -180,3 +180,14 @@ def list_images():
     except Exception as e:
         error_logger.error('list_images: %s', e)
         return HttpResponse({"status":"Failed"})
+
+
+def get_vnc_console(instance_id):
+    try:
+        creds = get_nova_creds()
+        nova = client.Client(**creds)
+        console = nova.servers.get_vnc_console(instance_id)
+        return HttpResponse({'console_url': str(console['console']['url']), 'status':'Success'})  # return url to user and ask him to open
+    except Exception as e:
+        error_logger.error('get_vnc_console: %s', e)
+        return HttpResponse({"status":"Failed"})
