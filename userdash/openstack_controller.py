@@ -1,15 +1,18 @@
 __author__ = 'Ashwini'
-import keystoneclient.v2_0.client as ksclient
-import glanceclient.v2.client as glclient
-from signups.credentials import get_keystone_creds, get_nova_creds
-from novaclient import client
-from models import *
 import time
 import os
 import uuid
+import logging
+
+import keystoneclient.v2_0.client as ksclient
+import glanceclient.v2.client as glclient
+from novaclient import client
 from django.db.models import Q
 from django.http import HttpResponse
-import logging
+
+from signups.credentials import get_keystone_creds, get_nova_creds
+from models import *
+
 error_logger = logging.getLogger('error')
 
 def get_token():
@@ -179,7 +182,7 @@ def list_images():
         return HttpResponse({'images':image_details, 'status':'Success'})
     except Exception as e:
         error_logger.error('list_images: %s', e)
-        return HttpResponse({"status":"Failed"})
+        return HttpResponse({"status": "Failed"})
 
 
 def get_vnc_console(instance_id):
