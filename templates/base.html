@@ -37,6 +37,8 @@
             /* Set the fixed height of the footer here */
             height: 60px;
             background-color: #f5f5f5;
+            z-index: 2000;
+            border-top: 1px solid #dddddd;
         }
 
     </style>
@@ -54,7 +56,7 @@
                 {% if user.is_authenticated %}
                     <li><a href="">Hi, {{ user.get_username }}</a></li>
                     <li><a href="/logout/">Logout</a>
-                {% else %}
+                        {% else %}
                     <li><a href="/login/">Login</a></li>
                     <li><a href="/register/">Register</a></li>
                 {% endif %}
@@ -63,27 +65,31 @@
     </div>
 </nav>
 
-<div class="container">
-     {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
+{% block sidebar %}
+
+{% endblock %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    {% block content %}
+        {% endfor %}
+    </ul>
+{% endif %}
 
-    {% endblock %}
-</div>
+{% block content %}
+
+{% endblock %}
 
 
+<!--
 <footer class="footer">
     <div class="container" align="center">
         <br>
         <p class="text-muted">Copyrights <a href="www.vnit.ac.in">VNIT@2015</a></p>
     </div>
 </footer>
-
+-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/static/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

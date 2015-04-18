@@ -38,6 +38,7 @@ def login_view(request):
 
     if request.method == 'POST':
         # messages.info(request, "in post")
+
         login_form = AuthenticationForm(request.POST)
         username = request.POST['username']
         password = request.POST['password']
@@ -49,7 +50,7 @@ def login_view(request):
 
                 login(request, user)
                 # Redirect to a success page.
-                # HttpResponseRedirect('/profile/')
+                return HttpResponseRedirect('/viewvms/')
             else:
                 # Return a 'disabled account' error message
                 # messages.info(request, "in disabled user")

@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
-
 {% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <form method="POST" action="">{% csrf_token %}
+                <fieldset>
+                    <legend>Login</legend>
 
-    <div class="col-md-4 col-md-offset-4">
-        <form method="POST" action="">{% csrf_token %}
-            <fieldset>
-                <legend>Login</legend>
-
-                <div class="form-group">
-                    <label for="id_{{ login_form.username.name }}">Username</label>
-                    <input type="text" class="form-control" name="username" id="id_{{ login_form.username.name }}" placeholder="Enter username" required>
-                </div>
-                <div class="form-group">
-                    <label for="{{ login_form.password.id }}">Password</label>
-                    <input type="password" class="form-control" name="password" id="id_{{ login_form.password.name }}" placeholder="Password" required>
-                </div>
-                <div>
-                {% if error.1 or error.2 %}
-                    <span class="errors">Username or password is incorrect</span>
-                {% endif %}
-                </div>
-                <button type="submit" class="btn btn-default">Login</button>
-            </fieldset>
-        </form>
+                    <div class="form-group">
+                        <label for="id_{{ login_form.username.name }}">Username</label>
+                        <input type="text" class="form-control" name="username" id="id_{{ login_form.username.name }}" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ login_form.password.id }}">Password</label>
+                        <input type="password" class="form-control" name="password" id="id_{{ login_form.password.name }}" placeholder="Password" required>
+                    </div>
+                    <div>
+                        {% if error.1 or error.2 %}
+                            <span class="errors">Username or password is incorrect</span>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-default">Login</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
 {% endblock %}

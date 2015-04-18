@@ -1,0 +1,99 @@
+{% extends 'dashboard_base.html' %}
+
+{% block dash-content %}
+    <h2 class="page-header">Create an Instances</h2>
+
+    <div class="col-md-6 col-md-offset-3">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="id_instance_name" class="col-sm-2 control-label">Instance name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="instance_name" id="id_instance_name" placeholder="Instance name" required   >
+                </div>
+            </div>
+
+            <h4> Flavor : </h4>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="flavor" id="optionsRadios1" value="tiny" checked>
+                                Tiny (Ram = 2GB , Hard disk = 20GB)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="flavor" id="optionsRadios2" value="small">
+                                Small (Ram = 4GB , Hard disk = 50GB)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="flavor" id="optionsRadios3" value="medium">
+                                Medium (Ram = 8GB , Hard disk = 100GB)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="flavor" id="optionsRadios4" value="large">
+                                Large (Ram = 16GB , Hard disk = 200GB)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4> Operating System : </h4>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="os" id="os1" value="windows" checked>
+                                Windows
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="os" id="os2" value="ubuntu">
+                                Ubuntu
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="os" id="os3" value="fedora">
+                                Fedora
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="os" id="os4" value="suse">
+                                Suse
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div align="center" style="padding: 30px">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}
