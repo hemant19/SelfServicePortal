@@ -130,7 +130,7 @@ LOGGING = {
         'error_handler': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': '/var/log/self_service_portal/error.log',
+            'filename': './error.log',
             'formatter': 'verbose'
         },
     },
