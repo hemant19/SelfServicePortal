@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^terminate/$', 'userdash.views.terminateInstanceView', name='terminate instance'),
     url(r'^start/$', 'userdash.views.startInstanceView', name='start instance'),
     url(r'^stop/$', 'userdash.views.stopInstanceView', name='stop instance'),
+    url(r'^vnc/$', 'userdash.views.viewConsole', name='vnc console'),
 
     url(r'^admin/', include(admin.site.urls)),
 ]

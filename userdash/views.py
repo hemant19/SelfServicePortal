@@ -3,8 +3,8 @@ import re
 from django.shortcuts import render_to_response, RequestContext, HttpResponseRedirect
 from django.contrib import messages
 
-from openstack_controller import create_instance, get_instances, terminate_instance, start_instance, stop_instance
-
+from openstack_controller import create_instance, get_instances, terminate_instance, start_instance, stop_instance, \
+    get_vnc_console
 
 # Create your views here.
 def createInstanceView(request):
@@ -99,6 +99,23 @@ def stopInstanceView(request):
         return HttpResponseRedirect('/viewvms/')
     else:
         return errorResponse(request, 'There was a problem stopping the image')
+
+
+def viewConsole(request):
+    current_user = request.user
+
+    if not current_user.is_authenticated():
+        HttpResponseRedirect('/error')
+
+    inst_id = request.GET.get('instanceid')
+
+    ret_val = get_vnc_console(inst_id)
+    if ret_val['status'] == 'Success':
+        vnc_url = ret_val['console_url']
+        return HttpResponseRedirect(vnc_url)
+
+    messages.error(request, "Sorry cannot open vnc console")
+    return HttpResponseRedirect('/viewvms/')
 
 
 def startInstanceView(request):

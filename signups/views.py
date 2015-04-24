@@ -12,7 +12,8 @@ def index(request):
 
 def register(request):
     error = {}
-
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/viewvms/')
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
 
@@ -42,6 +43,8 @@ def login_view(request):
 
     error = {}
 
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/viewvms/')
     if request.method == 'POST':
         # messages.info(request, "in post")
 

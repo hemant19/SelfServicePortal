@@ -197,7 +197,7 @@ def list_images():
 def get_vnc_console(instance_id):
     try:
         creds = get_nova_creds()
-        nova = client.Client(**creds)
+        nova = client.Client(2, **creds)
         console = nova.servers.get_vnc_console(instance_id)
         return {'console_url': str(console['console']['url']),
                 'status': 'Success'}  # return url to user and ask him to open

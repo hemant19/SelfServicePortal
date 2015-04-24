@@ -27,7 +27,7 @@
                             Action <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">View Console </a></li>
+                            <li><a href="/vnc/?instanceid={{ instance.instance_id }}">View Console </a></li>
                             <li><a href="/stop/?instanceid={{ instance.instance_id }}">Stop Instance</a></li>
                             <li><a href="/start/?instanceid={{ instance.instance_id }}">Start Instance</a></li>
                             <li class="divider"></li>
@@ -37,5 +37,5 @@
                 </td>
             </tr>
         {% endfor %}
-
+    </table>
 {% endblock %}

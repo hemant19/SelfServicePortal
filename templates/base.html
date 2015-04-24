@@ -54,7 +54,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <li><a href="">Hi, {{ user.get_username }}</a></li>
+                    <li><a href="/viewvms/">Hi, {{ user.get_username }}</a></li>
                     <li><a href="/logout/">Logout</a>
                         {% else %}
                     <li><a href="/login/">Login</a></li>
@@ -69,13 +69,6 @@
 
 {% endblock %}
 
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
 
 {% block content %}
 
