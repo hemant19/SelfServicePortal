@@ -1,10 +1,10 @@
 {% extends 'dashboard_base.html' %}
 
 {% block dash-content %}
-    <h2 class="page-header">Create an Instances</h2>
+    <h2 class="page-header">Create an Instance</h2>
 
     <div class="col-md-6 col-md-offset-3">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="POST">{% csrf_token %}
             <div class="form-group">
                 <label for="id_instance_name" class="col-sm-2 control-label">Instance name</label>
                 <div class="col-sm-10">

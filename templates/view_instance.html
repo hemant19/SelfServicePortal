@@ -8,50 +8,34 @@
             <th> Instance Id</th>
             <th> Instance Name</th>
             <th> Status </th>
+            <th> Flavor</th>
             <th> Floating ip</th>
-            <th> Actions </th>
+            <th> Options</th>
         </tr>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Action <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">View Conole </a></li>
-                        <li><a href="#">Suspend</a></li>
-                        <li><a href="#">Shutdown</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Terminate</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Action <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">View Conole </a></li>
-                        <li><a href="#">Suspend</a></li>
-                        <li><a href="#">Shutdown</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Terminate</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-    </table>
+        {% for instance in instance_list %}
+            <tr>
+                <td> {{ instance.instance_id }} </td>
+                <td> {{ instance.name }} </td>
+                <td> {{ instance.status }} </td>
+                <td> RAM : {{ instance.RAM }} ; HDD : {{ instance.Disk }} </td>
+                <td> {{ instance.floating_ip }} </td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false">
+                            Action <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="">View Console </a></li>
+                            <li><a href="/stop/?instanceid={{ instance.instance_id }}">Stop Instance</a></li>
+                            <li><a href="/start/?instanceid={{ instance.instance_id }}">Start Instance</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/terminate/?instanceid={{ instance.instance_id }}">Terminate</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
 
 {% endblock %}

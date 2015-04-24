@@ -1,8 +1,14 @@
-from django.shortcuts import render_to_response, RequestContext, HttpResponseRedirect
-from .forms import UserRegistrationForm
+from django.shortcuts import render_to_response, RequestContext, HttpResponseRedirect, HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+
+from .forms import UserRegistrationForm
+from userdash import openstack_controller as oc
+
+
+def index(request):
+    return HttpResponseRedirect('/login')
 
 def register(request):
     error = {}
@@ -44,13 +50,19 @@ def login_view(request):
         password = request.POST['password']
 
         user = authenticate(username=username, password=password)
+
         if user is not None:
             if user.is_active:
                 # messages.info(request, "in active user")
 
                 login(request, user)
-                # Redirect to a success page.
-                return HttpResponseRedirect('/viewvms/')
+                ret_auth = oc.authenticate(user)
+                if ret_auth['status'] == 'Success':
+                    # Redirect to a success page.
+                    return HttpResponseRedirect('/viewvms/')
+                else:
+                    logout(request)
+                    return HttpResponse('The Cloud service may be down.Please try after sometime')
             else:
                 # Return a 'disabled account' error message
                 # messages.info(request, "in disabled user")
