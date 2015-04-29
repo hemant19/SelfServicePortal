@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{{ name }}</title>
+    <title>vCloud-Self Service Portal</title>
 
     <!-- Bootstrap -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -43,13 +43,15 @@
 
     </style>
 </head>
-<body>
-
+{% block bg_body %}
+    <body background="/static/images/bgcloud.jpg">
+{% endblock %}
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Self Service Portal</a>
+            <a class="navbar-brand" href="/"><img alt="Brand" src="/static/images/vCloud_glow.png" height="60"
+                                                  width="105"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

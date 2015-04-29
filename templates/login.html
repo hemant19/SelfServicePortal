@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-        <div class="col-md-4 col-md-offset-4">
+
+        <div class="col-md-5 col-md-offset-4">
+            <img src="/static/images/vCloud_glow.png" height="233" width="400">
+
+            <div class="jumbotron">
+
             <form method="POST" action="">{% csrf_token %}
                 <fieldset>
                     <legend>Login</legend>
@@ -22,6 +27,7 @@
                     <button type="submit" class="btn btn-default">Login</button>
                 </fieldset>
             </form>
+        </div>
         </div>
     </div>
 {% endblock %}

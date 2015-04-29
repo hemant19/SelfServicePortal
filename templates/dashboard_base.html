@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block bg_body %}
+    <body background="/static/images/Cloudy-Day-Simple.png">
+{% endblock %}
+
 {% block sidebar %}
 
     <style>
@@ -95,7 +99,7 @@
     </style>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
+            <div class="col-sm-3 col-md-2 sidebar" style="background-color: #222;border-color: #080808;">
                 <ul class="nav nav-sidebar">
                     <li><a href="/viewvms">View Instances</a></li>
                     <li><a href="/createvm">Create an Instance</a></li>
